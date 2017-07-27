@@ -13,7 +13,7 @@ class SudokuMainViewController: UIViewController {
     //MARK:lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "数独"
+        self.title = "数独22"
         
         
     }
