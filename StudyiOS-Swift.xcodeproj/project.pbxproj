@@ -41,6 +41,7 @@
 		763B87141F145EB1002A2FF0 /* MindMapTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B87131F145EB1002A2FF0 /* MindMapTree.swift */; };
 		7655AEF11F161A1D00DAD364 /* MindMapRightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655AEF01F161A1D00DAD364 /* MindMapRightTableView.swift */; };
 		7655AEF31F16F70000DAD364 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655AEF21F16F70000DAD364 /* Tool.swift */; };
+		765FABEB1F2B1CB8000B14E6 /* SudokuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765FABEA1F2B1CB8000B14E6 /* SudokuModel.swift */; };
 		766779781F174162004DD429 /* MindMapOpenListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766779771F174162004DD429 /* MindMapOpenListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		763B87131F145EB1002A2FF0 /* MindMapTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMapTree.swift; sourceTree = "<group>"; };
 		7655AEF01F161A1D00DAD364 /* MindMapRightTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMapRightTableView.swift; sourceTree = "<group>"; };
 		7655AEF21F16F70000DAD364 /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		765FABEA1F2B1CB8000B14E6 /* SudokuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuModel.swift; sourceTree = "<group>"; };
 		766779771F174162004DD429 /* MindMapOpenListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMapOpenListTableViewController.swift; sourceTree = "<group>"; };
 		983509B95ADA7DA974F73258 /* Pods_StudyiOS_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyiOS_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB99B6083E4ECACCB7E806CF /* Pods-StudyiOS-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyiOS-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyiOS-Swift/Pods-StudyiOS-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				7639EF871F29C85F00CF842C /* SudokuMainViewController.swift */,
+				765FABEA1F2B1CB8000B14E6 /* SudokuModel.swift */,
 			);
 			path = sudoku;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				763B870C1F0E2E03002A2FF0 /* MindMapView.swift in Sources */,
 				763B87061F0DDA5C002A2FF0 /* DrawLineViewController.swift in Sources */,
 				763B87141F145EB1002A2FF0 /* MindMapTree.swift in Sources */,
+				765FABEB1F2B1CB8000B14E6 /* SudokuModel.swift in Sources */,
 				7639EF771F270E9500CF842C /* JigsawImageViewController.swift in Sources */,
 				7655AEF11F161A1D00DAD364 /* MindMapRightTableView.swift in Sources */,
 				763B86D51F09F432002A2FF0 /* AppDelegate.swift in Sources */,
@@ -589,6 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 87PQ74Z85A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,6 +614,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 87PQ74Z85A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

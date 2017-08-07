@@ -10,12 +10,14 @@ import UIKit
 
 class SudokuMainViewController: UIViewController {
     
+    let JIGSATOPY = 64
+    
     //MARK:lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "数独"
         
-        
+        createGrid(nGrid: 9)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +25,79 @@ class SudokuMainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func createGrid(nGrid:Int){
+        let sqrtNGrid = Int.init(sqrt(Double(nGrid)))
+        let sudo = SudokuModel()
+        let sudokuArr = sudo.getSudokuArr()
+        
+        let width = screenRect.width/CGFloat(nGrid)//格子的边
+        
+        for row in 0..<nGrid {
+            for col in 0..<nGrid {
+                let model = SudokuModel()
+                
+                var frame = CGRect.init(x: CGFloat(col)*width, y: CGFloat(JIGSATOPY*2)+CGFloat(row)*width, width: width-1, height: width-1)
+                model.point = CGPoint.init(x: row, y: col)
+                model.label = createLabel(frame: frame)
+                model.label.text = "\(sudokuArr[row][col])"
+//                model.label.text = "\(row)-\(col)"
+//                model.label.text = "\(row%sqrtNGrid)-\(col%sqrtNGrid)"
+//                model.label.text = "\(row%sqrtNGrid*sqrtNGrid+col%sqrtNGrid)"
+                self.view.addSubview(model.label)
+                
+                if col%sqrtNGrid == 0 && row%sqrtNGrid == 0{
+                    frame.size = CGSize.init(width: width*CGFloat(sqrtNGrid), height: width*CGFloat(sqrtNGrid))
+                    let view = createView(frame: frame)
+                    self.view.addSubview(view)
+                }
+            }
+        }
+        
+        let btnY = JIGSATOPY*2+(nGrid+1) * Int.init(width)
+        for i in 0..<nGrid {
+            let frame = CGRect.init(x: CGFloat(i)*width, y: CGFloat(btnY), width: width-2, height: width)
+            let btn = createButton(frame: frame, title: "\(i)")
+            self.view.addSubview(btn)
+        }
+    }
+    
+    func createView(frame:CGRect) -> UIView {
+        let view = UIView.init(frame: frame)
+        view.backgroundColor = UIColor.clear
+//        view.layer.cornerRadius = 5;
+        view.layer.borderWidth = 1;
+        return view
+    }
+    
+    func createLabel(frame:CGRect) -> UILabel {
+        let label = UILabel.init(frame: frame)
+        label.backgroundColor = UIColor.clear
+        label.layer.cornerRadius = 5;
+        label.layer.borderWidth = 1;
+        label.textAlignment = NSTextAlignment.center
+        return label
+    }
+    
+    func createButton(frame:CGRect,title:String) -> UIButton {
+        let button = UIButton.init(frame: frame)
+        button.backgroundColor = UIColor.clear
+        button.layer.cornerRadius = 5;
+        button.layer.borderWidth = 1;
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        return button
+    }
+    
+    //图片显示的frame
+    func getPositionFrame(index:Int,nGrid:Int) -> CGRect {
+        let row = index/nGrid
+        let col = index%nGrid
+        
+        let width = screenRect.width/CGFloat(nGrid)
+        let height = (screenRect.height-CGFloat(JIGSATOPY)*2)/CGFloat(nGrid)
+        
+        return CGRect.init(x: CGFloat(col)*width, y: CGFloat(JIGSATOPY)+CGFloat(row)*height, width: width, height: height)
+    }
     
     
     //MARK:-触摸事件

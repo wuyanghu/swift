@@ -19,6 +19,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "功能列表"
+        
 //        _ = BluetoothShareInstance.shared
         // Do any additional setup after loading the view, typically from a nib.
         let tableviewFrame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
