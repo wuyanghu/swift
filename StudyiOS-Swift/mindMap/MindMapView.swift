@@ -244,7 +244,7 @@ class MindMapView: UIScrollView,UIScrollViewDelegate,UITextViewDelegate {
         let color = UIColor.red
         let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.center
-        (str as NSString).draw(in: rect, withAttributes: [NSFontAttributeName:font,NSForegroundColorAttributeName:color,NSParagraphStyleAttributeName:style])
+        (str as NSString).draw(in: rect, withAttributes: [NSAttributedStringKey.font:font,NSAttributedStringKey.foregroundColor:color,NSAttributedStringKey.paragraphStyle:style])
         
     }
 
@@ -298,9 +298,9 @@ class MindMapView: UIScrollView,UIScrollViewDelegate,UITextViewDelegate {
     /*
      长按删除
      1.删除结点的线、文本、button、button的node
-     2.移除结点
+     2.移除@objc 结点
      */
-    func longpressClick(sender:UITapGestureRecognizer?){
+    @objc func longpressClick(sender:UITapGestureRecognizer?){
         if sender?.state == .began {
             let button = sender?.view as! UIButton
             let node = mindNodeModel.mindMapTreeNodeDict[button.tag]
@@ -314,10 +314,10 @@ class MindMapView: UIScrollView,UIScrollViewDelegate,UITextViewDelegate {
             }
             setNeedsDisplay()
         }
-        
+//        @objc
     }
     
-    func btnClick(sender:UIButton?){
+    @objc func btnClick(sender:UIButton?){
         print("点击了Button\(String(describing: sender?.tag))");
         nodeY = 10
         mindMapTree.addNode(i: (sender?.tag)!, element: "")

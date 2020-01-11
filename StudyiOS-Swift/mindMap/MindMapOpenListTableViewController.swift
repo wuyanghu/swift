@@ -91,7 +91,7 @@ class MindMapOpenListTableViewController: UITableViewController {
     }
 
     
-    func longpressClick(sender:UITapGestureRecognizer?){
+    @objc func longpressClick(sender:UITapGestureRecognizer?){
         if sender?.state == .began {
             let cell = sender?.view as! UITableViewCell
             print("长按\(String(describing: cell.textLabel?.text))");

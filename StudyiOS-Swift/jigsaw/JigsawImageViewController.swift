@@ -35,7 +35,7 @@ class JigsawImageViewController: UIViewController,UIImagePickerControllerDelegat
     }
     
 
-    func buttonClick(sender:UIButton) {
+    @objc func buttonClick(sender:UIButton) {
         if self.imagePicker == nil{
             self.imagePicker = UIImagePickerController()
         }

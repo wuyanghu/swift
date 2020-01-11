@@ -49,7 +49,7 @@ class JigsawCollectionViewController: UIViewController,UICollectionViewDataSourc
     }
 
     //MARK:调用系统图片
-    func rightBarItemAction() {
+    @objc func rightBarItemAction() {
         if self.imagePicker == nil{
             self.imagePicker = UIImagePickerController()
         }

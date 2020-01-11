@@ -93,11 +93,11 @@ class SudokuMainViewController: UIViewController {
         button.tag = Int(title)!
         button.setTitle(title, for: .normal)
         button.setTitleColor(.red, for: .normal)
-        button.addTarget(self, action:#selector(btnClick(sender:)), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action:#selector(btnClick(sender:)), for: UIControl.Event.touchUpInside)
         return button
     }
     
-    func btnClick(sender:UIButton?){
+    @objc func btnClick(sender:UIButton?){
         print("点击了Button\(String(describing: sender?.tag))");
     }
     

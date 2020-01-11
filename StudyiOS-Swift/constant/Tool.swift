@@ -15,8 +15,8 @@ class Tool: NSObject {
     static func getLabHeight(labelStr:String,font:UIFont,width:CGFloat) -> CGFloat {
         let statusLabelText: NSString = labelStr as NSString
         let size = CGSize.init(width: width, height: CGFloat(MAXFLOAT))
-        let dic = NSDictionary(object: font, forKey: NSFontAttributeName as NSCopying)
-        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [String : AnyObject], context: nil).size
+        let dic = NSDictionary(object: font, forKey: NSAttributedStringKey.font as NSCopying)
+        let strSize = statusLabelText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedStringKey : AnyObject], context: nil).size
         return strSize.height
     }
     

@@ -51,7 +51,7 @@ class DrawerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func panAction(sender: UIPanGestureRecognizer){
+    @objc func panAction(sender: UIPanGestureRecognizer){
         //获取手指位置
         let point = sender.translation(in: sender.view)
         if point.x < -mainVC_offset{

@@ -50,7 +50,7 @@ class MindMapViewController: UIViewController {
         
     }
     
-    func backToPrevious(){
+    @objc func backToPrevious(){
         
         self.navigationController?.popToRootViewController(animated: true);
         
@@ -210,7 +210,7 @@ class MindMapViewController: UIViewController {
     }
     
     //MARK:抽屉效果
-    func rightBarItemAction() {
+    @objc func rightBarItemAction() {
         if (self.rightTableView?.isHidden)! {
             self.rightTableView?.isHidden = false
             self.showRightView()

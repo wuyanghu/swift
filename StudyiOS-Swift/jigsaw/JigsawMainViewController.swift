@@ -51,7 +51,7 @@ class JigsawMainViewController: UIViewController {
         for index in 0..<sortList.count {
             let newIndex = Int(arc4random_uniform(UInt32(sortList.count-index))) + index
             if index != newIndex {
-                swap(&sortList[index], &sortList[newIndex])
+                sortList.swapAt(index, newIndex)
             }
         }
         return sortList

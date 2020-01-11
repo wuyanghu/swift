@@ -34,7 +34,7 @@ class DrawLineViewController: UIViewController,DrawViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func backToPrevious(){
+    @objc func backToPrevious(){
         
         self.navigationController?.popToRootViewController(animated: true);
         
